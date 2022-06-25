@@ -78,14 +78,12 @@ public class RucksackGreedy {
      * 				Wert der besten Loesung
      */
     static int rucksack(int[] ausgewaehlt, int[] gewichte, int[] werte, int restKapa, int objIndex){
-        for (int i = objIndex; i < ausgewaehlt.length; i++) {
-            if (ausgewaehlt[ausgewaehlt.length-1-i] == 0) {//Wenn das Objekt noch nicht ausgewaehlt wurde
-                ausgewaehlt[ausgewaehlt.length-1-i] = 1;//Auswahl des Objekts
-                if (gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa) != -1) {//Wenn das Gesamtgewicht noch im Rahmen ist
-
-                    continue;//Weiter mit der Suche
+        for (int i = 0; i < ausgewaehlt.length; i++) {
+            if (ausgewaehlt[i] == 0) {//Wenn das Objekt noch nicht ausgewaehlt wurde
+                ausgewaehlt[i] = 1;//Auswahl des Objekts
+                if (gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa) == -1) {//Wenn das Gesamtgewicht noch im Rahmen ist
+                    ausgewaehlt[i] = 0;//Rücksetzen der Auswahl
                 }
-                ausgewaehlt[ausgewaehlt.length-1-i] = 0;//Rücksetzen der Auswahl
             }
         }
         return gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa);//Rückgabe des besten Wertes
