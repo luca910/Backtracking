@@ -104,17 +104,17 @@ public class RucksackBacktracking {
 		int[] ausgewaehlt2 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
-		long startTime = System.currentTimeMillis();
+		long startTime = System.nanoTime();
 		System.out.println(rucksack(ausgewaehlt,gewichte,werte,30,0));
-		long stopTime = System.currentTimeMillis();
-		System.out.println("Zeit: " + (stopTime-startTime));
+		long stopTime = System.nanoTime();
+		System.out.println("Zeit: " + (stopTime-startTime)+"ns");
 		System.out.println("Loesung: "+Arrays.toString(guteLoesung));
 
 
-		startTime = System.currentTimeMillis();
+		startTime = System.nanoTime();
 		System.out.println(rucksack(ausgewaehlt2,gewicht2,werte2,30,0));
-		stopTime = System.currentTimeMillis();
-		System.out.println("Zeit: " + (stopTime-startTime));
+		stopTime = System.nanoTime();
+		System.out.println("Zeit: " + (stopTime-startTime)+"ns");
 		System.out.println("Loesung: "+Arrays.toString(guteLoesung));
 	}
 
