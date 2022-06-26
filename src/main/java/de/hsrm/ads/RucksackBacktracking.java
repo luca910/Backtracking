@@ -96,27 +96,37 @@ public class RucksackBacktracking {
 	}
 
 	public static void main(String[] args) {
+		long ticks = 0;
+		long startTime;
+		long stopTime;
+
 		int[] gewichte= {10,5,7,11};
 		int[] werte={7,6,2,1};
 		int[] ausgewaehlt = {0,0,0,0};
 
-		int[] gewicht2={10,5,7,11,13,1,7,11,13,19,19,9,8,2,7,31};
-		int[] werte2={7,6,1,1,1,4,11,20,3,7,8,9,16,19,100,3};
-		int[] ausgewaehlt2 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-
-
-		long startTime = System.nanoTime();
-		System.out.println(rucksack(ausgewaehlt,gewichte,werte,30,0));
-		long stopTime = System.nanoTime();
-		System.out.println("Zeit: " + (stopTime-startTime)+"ns");
-		System.out.println("Loesung: "+Arrays.toString(guteLoesung));
+		int[] gewicht2={10,5,7,11,13,1,7,11,13,19,19,9,8,2,7};
+		int[] werte2={7,6,1,1,1,4,11,20,3,7,8,9,16,19,100};
+		int[] ausgewaehlt2 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
 		startTime = System.nanoTime();
-		System.out.println(rucksack(ausgewaehlt2,gewicht2,werte2,30,0));
+		System.out.print("Bester Wert: "+rucksack(ausgewaehlt,gewichte,werte,30,0));
 		stopTime = System.nanoTime();
-		System.out.println("Zeit: " + (stopTime-startTime)+"ns");
+		ticks = (stopTime - startTime)/1000;
+
+		System.out.println("    |   Gesamtgewicht: "+gesamtGewicht(gewichte,werte,guteLoesung,30));
 		System.out.println("Loesung: "+Arrays.toString(guteLoesung));
+		System.out.println("Zeit: "+(stopTime - startTime)+"ns ≈" +String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10)+"ms\n");
+
+
+		startTime = System.nanoTime();
+		System.out.print("Bester Wert: "+rucksack(ausgewaehlt2,gewicht2,werte2,30,0));
+		stopTime = System.nanoTime();
+		ticks = (stopTime - startTime)/1000;
+
+		System.out.println("    |   Gesamtgewicht: "+gesamtGewicht(gewicht2,werte2,guteLoesung,30));
+		System.out.println("Loesung: "+Arrays.toString(guteLoesung));
+		System.out.println("Zeit: "+(stopTime - startTime)+"ns ≈" +String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10)+"ms\n");
 	}
 
 }

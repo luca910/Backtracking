@@ -79,17 +79,21 @@ public class RucksackGreedy {
      */
     static int rucksack(int[] ausgewaehlt, int[] gewichte, int[] werte, int restKapa, int objIndex){
         for (int i = 0; i < ausgewaehlt.length; i++) {
-            if (ausgewaehlt[i] == 0) {//Wenn das Objekt noch nicht ausgewaehlt wurde
-                ausgewaehlt[i] = 1;//Auswahl des Objekts
-                if (gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa) == -1) {//Wenn das Gesamtgewicht noch im Rahmen ist
-                    ausgewaehlt[i] = 0;//Rücksetzen der Auswahl
+            if (ausgewaehlt[i] == 0) {  //Wenn das Objekt noch nicht ausgewaehlt wurde
+                ausgewaehlt[i] = 1; //Auswahl des Objekts
+                if (gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa) == -1) {  //Wenn das Gesamtgewicht noch im Rahmen ist
+                    ausgewaehlt[i] = 0; //Rücksetzen der Auswahl
                 }
             }
         }
-        return gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa);//Rückgabe des besten Wertes
+        return gesamtWert(gewichte, werte, ausgewaehlt, restKapa);  //Rückgabe des besten Wertes
     }
 
     public static void main(String[] args) {
+        long ticks;
+        long startTime;
+        long stopTime;
+
         int[] gewichte= {10,5,7,11};
         int[] werte={7,6,2,1};
         int[] ausgewaehlt = {0,0,0,0};
@@ -99,18 +103,24 @@ public class RucksackGreedy {
         int[] ausgewaehlt2 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 
-        long startTime = System.nanoTime();
-        System.out.println(rucksack(ausgewaehlt,gewichte,werte,30,0));
-        long stopTime = System.nanoTime();
-        System.out.println("Zeit: " + (stopTime-startTime)+"ns");
+        startTime = System.nanoTime();
+        System.out.print("Bester Wert: "+rucksack(ausgewaehlt,gewichte,werte,30,0));
+        stopTime = System.nanoTime();
+        ticks = (stopTime - startTime)/1000;
+
+        System.out.println("    |   Gesamtgewicht: "+gesamtGewicht(gewichte,werte,ausgewaehlt,30));
         System.out.println("Loesung: "+Arrays.toString(ausgewaehlt));
+        System.out.println("Zeit: "+(stopTime - startTime)+"ns ≈" +String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10)+"ms\n");
 
 
         startTime = System.nanoTime();
-        System.out.println(rucksack(ausgewaehlt2,gewicht2,werte2,30,0));
+        System.out.print("Bester Wert: "+rucksack(ausgewaehlt2,gewicht2,werte2,30,0));
         stopTime = System.nanoTime();
-        System.out.println("Zeit: " + (stopTime-startTime)+"ns");
+        ticks = (stopTime - startTime)/1000;
+
+        System.out.println("    |   Gesamtgewicht: "+gesamtGewicht(gewicht2,werte2,ausgewaehlt2,30));
         System.out.println("Loesung: "+Arrays.toString(ausgewaehlt2));
+        System.out.println("Zeit: "+(stopTime - startTime)+"ns ≈" +String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10)+"ms\n");
     }
 
 }
