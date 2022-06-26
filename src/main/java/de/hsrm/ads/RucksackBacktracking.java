@@ -96,7 +96,7 @@ public class RucksackBacktracking {
 	}
 
 	public static void main(String[] args) {
-		long ticks = 0;
+		long ticks;
 		long startTime;
 		long stopTime;
 
