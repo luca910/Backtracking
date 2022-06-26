@@ -82,9 +82,10 @@ public class RucksackBacktracking {
 			if (ausgewaehlt[ausgewaehlt.length-1-i] == 0) {//Wenn das Objekt noch nicht ausgewaehlt wurde
 				ausgewaehlt[ausgewaehlt.length-1-i] = 1;//Auswahl des Objekts
 				if (gesamtGewicht(gewichte, werte, ausgewaehlt, restKapa) != -1) {//Wenn das Gesamtgewicht noch im Rahmen ist
-					if (guteLoesungWER < gesamtWert(gewichte, werte, ausgewaehlt, restKapa)) {//Wenn das Gesamtwert besser ist
+					int gw =gesamtWert(gewichte, werte, ausgewaehlt, restKapa);//Berechnung des Gesamtwertes
+					if (guteLoesungWER < gw) {//Wenn das Gesamtwert besser ist
 						guteLoesung = ausgewaehlt.clone();//Beste Loesung speichern
-						guteLoesungWER = gesamtWert(gewichte, werte, ausgewaehlt, restKapa);//Besten Wert speichern
+						guteLoesungWER = gw;//Besten Wert speichern
 					}
 					rucksack(ausgewaehlt, gewichte, werte, restKapa, i+1);//Rekursiver aufruf
 				}
