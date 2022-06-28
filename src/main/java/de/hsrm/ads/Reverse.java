@@ -1,7 +1,17 @@
 package de.hsrm.ads;
 
-import java.util.Arrays;
 
+
+/**
+ * String Reverse Rekusiv mit Palindrom-Check
+ * @see <a href="https://www.cs.hs-rm.de/~reith/resources/Lehre/ADS22/Test2.pdf">cs.hs-rm.de</a>
+ * @author Luca Krawczyk
+ * @author Paul Knoll
+ *
+ * @version 1.0
+ *
+ * Creates a new Reverse object.
+ */
 public class Reverse {
     /**
      * Kehrt den Übergebenen String um.
@@ -22,7 +32,6 @@ public class Reverse {
      * @param s String to reverse
      * @return reversed string
      */
-
     public String reverseRecursivePalindrome(String s) {
         if (isPalindrome(s)) {
             return s;
@@ -53,7 +62,10 @@ public class Reverse {
         return true;
     }
 
-
+    /**
+     * Hauptmethode zum Starten des Backtracking Algorithmus.
+     * @param args keine Argumente
+     */
     public static void main(String[] args) {
         long ticks;
         long startTime = System.nanoTime();

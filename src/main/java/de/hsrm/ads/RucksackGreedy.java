@@ -2,12 +2,36 @@ package de.hsrm.ads;
 
 import java.util.Arrays;
 
-public class RucksackGreedy {
-    public static int guteLoesungGEW = 0;
-    public static int guteLoesungWER = 0;
-    public static int[] guteLoesung;
+/**
+ * Loesung des Rucksack Problems mit Greedy
+ * @see <a href="https://www.cs.hs-rm.de/~reith/resources/Lehre/ADS22/Test2.pdf">cs.hs-rm.de</a>
+ * @author Luca Krawczyk
+ * @author Paul Knoll
+ *
+ * @version 1.0
+ *
+ * Creates a new RucksackGreedy object.
+ */
 
-    public static int counter= 0;
+public class RucksackGreedy {
+    /**
+     * Loescht alle Elemente aus der Liste.
+     *
+     * @param list Liste, die geleert werden soll
+     */
+    /**
+     * Globele Variable mit dem Wert der aktuellen Loesung
+     */
+    public static int guteLoesungWER = 0;
+    /**
+     * Globele Variable mit dem Array der aktuellen Loesung
+     *                    (0 = nicht ausgewaehlt, 1 = ausgewaehlt)
+     */
+    public static int[] guteLoesung;
+    /**
+     * Globaler Counter zur Ueberpruefung der Loesungen
+     */
+    public static int counter;
 
     /**
      * Berechnet das Gesamtgewicht der aktuellen Loesung.
@@ -20,6 +44,9 @@ public class RucksackGreedy {
      * @return Gesamtgewicht der aktuellen Loesung oder -1, wenn das Gesamtgewicht groeßer als maxGewicht ist
      */
     static int gesamtGewicht(int[] gewicht, int[] werte, int[] res, int maxGewicht) {
+        /**
+         * @param result - Ergebnis der Berechnung
+         */
         int result = 0;
         for (int i = 0; i < res.length; i++) {
             if (res[i] > 0) {
@@ -44,6 +71,9 @@ public class RucksackGreedy {
      * oder -1, wenn das Gesamtgewicht groeßer als maxGewicht ist
      */
     static int gesamtWert(int[] gewicht, int[] werte, int[] res, int maxGewicht) {
+        /**
+         * @param result - Ergebnis der Berechnung
+         */
         int result = 0;
         if (gesamtGewicht(gewicht, werte, res, maxGewicht) == -1) {
             return -1;
@@ -79,6 +109,13 @@ public class RucksackGreedy {
         return gesamtWert(gewichte, werte, ausgewaehlt, restKapa);  //Rückgabe des besten Wertes
     }
 
+    /**
+     * Hauptmethode zum Starten des Backtracking Algorithmus.
+     *
+     * @param gewichte Liste der Gewichte
+     * @param werte Liste der Werte der Gewichte
+     * @param ausgewaehlt Liste der aktuellen Loesung (auswahl von Gewichten)
+     */
     public static void run(int[] gewichte, int[] werte, int[] ausgewaehlt) {
         long ticks;
         long startTime;
@@ -98,6 +135,10 @@ public class RucksackGreedy {
         System.out.println("    Anzahl der Iterationen: " + counter +"\n");
     }
 
+    /**
+     * Hauptmethode zum Starten des Backtracking Algorithmus.
+     * @param args keine Argumente
+     */
     public static void main(String[] args) {
         int[] gewichte = {10, 5, 7, 11};
         int[] werte = {7, 6, 2, 1};

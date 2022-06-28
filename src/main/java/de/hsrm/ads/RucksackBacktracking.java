@@ -98,9 +98,9 @@ public class RucksackBacktracking {
      * @param restKapa    Restkapazitaet
      * @param objIndex    Index des Objekts, das gerade bearbeitet wird
      * @return Wert der besten Loesung
-     * @throws IndexOutOfBoundsException   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Gewichte ist
-     * @throws IndexOutOfBoundsException   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Werte ist
-     * @throws IndexOutOfBoundsException   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der aktuellen Loesung ist
+     * @throws IndexOutOfBoundsException    Wenn die Anzahl der Objekte nicht gleich der Anzahl der Gewichte ist
+     * @throws IndexOutOfBoundsException    Wenn die Anzahl der Objekte nicht gleich der Anzahl der Werte ist
+     * @throws IndexOutOfBoundsException    Wenn die Anzahl der Objekte nicht gleich der Anzahl der aktuellen Loesung ist
      */
     static int rucksack(int[] ausgewaehlt, int[] gewichte, int[] werte, int restKapa, int objIndex) {
         for (int i = objIndex; i < ausgewaehlt.length; i++) {
@@ -129,7 +129,6 @@ public class RucksackBacktracking {
      * @param werte Liste der Werte der Gewichte
      * @param ausgewaehlt Liste der aktuellen Loesung (auswahl von Gewichten)
      */
-
     public static void run(int[] gewichte, int[] werte, int[] ausgewaehlt) {
         long ticks;
         long startTime;
@@ -151,7 +150,7 @@ public class RucksackBacktracking {
 
     /**
      * Hauptmethode zum Starten des Backtracking Algorithmus.
-     * @param args - keine Argumente
+     * @param args keine Argumente
      */
     public static void main(String[] args) {
 

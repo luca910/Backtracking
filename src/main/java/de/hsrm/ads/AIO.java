@@ -1,8 +1,20 @@
 package de.hsrm.ads;
 
-import de.hsrm.ads.RucksackBacktracking;
-
+/**
+ * All in One Class zum ausführen der Main-Methode aller Aufgaben.
+ * @see <a href="https://www.cs.hs-rm.de/~reith/resources/Lehre/ADS22/Test2.pdf">cs.hs-rm.de</a>
+ * @author Luca Krawczyk
+ * @author Paul Knoll
+ *
+ * @version 1.0
+ *
+ * Creates a new AIO object.
+ */
 class AIO{
+    /**
+     * Main-Methode zum Ausführen aller Aufgaben.
+     * @param args Keine Argumente für die Main-Methode
+     */
     public static void main(String[] args) {
         System.out.println("Aufgabe RucksackBacktracking Anfang");
         RucksackBacktracking.main(args);
