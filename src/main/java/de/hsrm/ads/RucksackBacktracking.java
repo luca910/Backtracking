@@ -9,8 +9,15 @@ import java.util.Arrays;
  * @author Paul Knoll
  *
  * @version 1.0
+ *
+ * Creates a new RucksackBacktracking object.
  */
 public class RucksackBacktracking {
+    /**
+     * Loescht alle Elemente aus der Liste.
+     *
+     * @param list Liste, die geleert werden soll
+     */
     /**
      * Globele Variable mit dem Wert der aktuellen Loesung
      */
@@ -91,6 +98,9 @@ public class RucksackBacktracking {
      * @param restKapa    Restkapazitaet
      * @param objIndex    Index des Objekts, das gerade bearbeitet wird
      * @return Wert der besten Loesung
+     * @throws IndexOutOfBoundsException   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Gewichte ist
+     * @throws IndexOutOfBoundsException   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Werte ist
+     * @throws IndexOutOfBoundsException   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der aktuellen Loesung ist
      */
     static int rucksack(int[] ausgewaehlt, int[] gewichte, int[] werte, int restKapa, int objIndex) {
         for (int i = objIndex; i < ausgewaehlt.length; i++) {
@@ -118,11 +128,6 @@ public class RucksackBacktracking {
      * @param gewichte Liste der Gewichte
      * @param werte Liste der Werte der Gewichte
      * @param ausgewaehlt Liste der aktuellen Loesung (auswahl von Gewichten)
-     *
-     *
-     * @throws Exception   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Gewichte ist
-     * @throws Exception   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Werte ist
-     * @throws Exception   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der aktuellen Loesung ist
      */
 
     public static void run(int[] gewichte, int[] werte, int[] ausgewaehlt) {
@@ -144,7 +149,12 @@ public class RucksackBacktracking {
         System.out.println("    Anzahl der Iterationen: " + counter +"\n");
     }
 
+    /**
+     * Hauptmethode zum Starten des Backtracking Algorithmus.
+     * @param args - keine Argumente
+     */
     public static void main(String[] args) {
+
         int[] gewichte = {10, 5, 7, 11};
         int[] werte = {7, 6, 2, 1};
         int[] ausgewaehlt = {0, 0, 0, 0};

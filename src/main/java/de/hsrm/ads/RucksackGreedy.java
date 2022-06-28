@@ -57,7 +57,7 @@ public class RucksackGreedy {
     }
 
     /**
-     * Loest das Problem mit Backtracking.
+     * Loest das Problem mit Greedy.
      *
      * @param ausgewaehlt Liste der aktuellen Loesung (auswahl von Gewichten)
      * @param gewichte    Liste der Gewichte
@@ -87,15 +87,15 @@ public class RucksackGreedy {
         guteLoesung=new int[gewichte.length];
         guteLoesungWER = 0;
         startTime = System.nanoTime();
-        System.out.print("Bester Wert: " + rucksack(ausgewaehlt, gewichte, werte, 30, 0));
+        System.out.print("    Bester Wert: " + rucksack(ausgewaehlt, gewichte, werte, 30, 0));
         stopTime = System.nanoTime();
         ticks = (stopTime - startTime) / 1000;
 
-        System.out.println("    |   Gesamtgewicht: " + gesamtGewicht(gewichte, werte, guteLoesung, 30));
-        System.out.println("Loesung: " + Arrays.toString(guteLoesung));
-        System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms");
-        System.out.println("Laenge: " + guteLoesung.length);
-        System.out.println("Anzahl der Iterationen: " + counter +"\n");
+        System.out.println("    |   Gesamtgewicht: " + gesamtGewicht(gewichte, werte, ausgewaehlt, 30));
+        System.out.println("    Loesung: " + Arrays.toString(ausgewaehlt));
+        System.out.println("    Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms");
+        System.out.println("    Laenge: " + guteLoesung.length);
+        System.out.println("    Anzahl der Iterationen: " + counter +"\n");
     }
 
     public static void main(String[] args) {
@@ -123,9 +123,12 @@ public class RucksackGreedy {
         int[] werte5 = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
         int[] ausgewaehlt5 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-
+        System.out.println("Beispiel 1: ");
         run(gewichte, werte, ausgewaehlt);
+
+        System.out.println("Beispiel 2: ");
         run(gewichte2, werte2, ausgewaehlt2);
+
         run(bestG, bestW, bestA);
         run(gewichte3, werte3, ausgewaehlt3);
         run(gewichte4, werte4, ausgewaehlt4);
