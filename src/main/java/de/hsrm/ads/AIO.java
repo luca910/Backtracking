@@ -1,5 +1,7 @@
 package de.hsrm.ads;
 
+import de.hsrm.ads.RucksackBacktracking;
+
 class AIO{
     public static void main(String[] args) {
         System.out.println("Aufgabe RucksackBacktracking Anfang");
