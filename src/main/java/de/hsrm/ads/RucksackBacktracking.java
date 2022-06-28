@@ -2,12 +2,28 @@ package de.hsrm.ads;
 
 import java.util.Arrays;
 
+/**
+ * Loesung des Rucksack Problems mit Backtracking
+ * @see <a href="https://www.cs.hs-rm.de/~reith/resources/Lehre/ADS22/Test2.pdf">cs.hs-rm.de</a>
+ * @author Luca Krawczyk
+ * @author Paul Knoll
+ *
+ * @version 1.0
+ */
 public class RucksackBacktracking {
-    public static int guteLoesungGEW = 0;
+    /**
+     * Globele Variable mit dem Wert der aktuellen Loesung
+     */
     public static int guteLoesungWER = 0;
+    /**
+     * Globele Variable mit dem Array der aktuellen Loesung
+     *                    (0 = nicht ausgewaehlt, 1 = ausgewaehlt)
+     */
     public static int[] guteLoesung;
-
-    public static int counter= 0;
+    /**
+     * Globaler Counter zur Ueberpruefung der Loesungen
+     */
+    public static int counter;
 
     /**
      * Berechnet das Gesamtgewicht der aktuellen Loesung.
@@ -18,8 +34,12 @@ public class RucksackBacktracking {
      * @param res        Liste der aktuellen Loesung (auswahl von Gewichten)
      * @param maxGewicht Maximaler Gewichtsgrenzwert
      * @return Gesamtgewicht der aktuellen Loesung oder -1, wenn das Gesamtgewicht groeßer als maxGewicht ist
+     *
      */
     static int gesamtGewicht(int[] gewicht, int[] werte, int[] res, int maxGewicht) {
+        /**
+         * @param result - Ergebnis der Berechnung
+         */
         int result = 0;
         for (int i = 0; i < res.length; i++) {
             if (res[i] > 0) {
@@ -44,6 +64,9 @@ public class RucksackBacktracking {
      * oder -1, wenn das Gesamtgewicht groeßer als maxGewicht ist
      */
     static int gesamtWert(int[] gewicht, int[] werte, int[] res, int maxGewicht) {
+        /**
+         * @param result - Ergebnis der Berechnung
+         */
         int result = 0;
         if (gesamtGewicht(gewicht, werte, res, maxGewicht) == -1) {
             return -1;
@@ -58,6 +81,9 @@ public class RucksackBacktracking {
 
     /**
      * Loest das Problem mit Backtracking.
+     * Diese Backtracking Implementierung beginnt bei der ersten Loesung und geht dann in alle moeglichen weiteren Loesungen vor.
+     * Hierbei wird das ausgewaehlt array von hinten aus verändert.
+     * Somit werden nach und nach Lösungen ausgeschlossen, die ungültig sind.
      *
      * @param ausgewaehlt Liste der aktuellen Loesung (auswahl von Gewichten)
      * @param gewichte    Liste der Gewichte
@@ -86,6 +112,19 @@ public class RucksackBacktracking {
         return guteLoesungWER;    //Rückgabe des besten Wertes
     }
 
+    /**
+     * Hauptmethode zum Starten des Backtracking Algorithmus.
+     *
+     * @param gewichte Liste der Gewichte
+     * @param werte Liste der Werte der Gewichte
+     * @param ausgewaehlt Liste der aktuellen Loesung (auswahl von Gewichten)
+     *
+     *
+     * @throws Exception   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Gewichte ist
+     * @throws Exception   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der Werte ist
+     * @throws Exception   - Wenn die Anzahl der Objekte nicht gleich der Anzahl der aktuellen Loesung ist
+     */
+
     public static void run(int[] gewichte, int[] werte, int[] ausgewaehlt) {
         long ticks;
         long startTime;
@@ -94,15 +133,15 @@ public class RucksackBacktracking {
         guteLoesung=new int[gewichte.length];
         guteLoesungWER = 0;
         startTime = System.nanoTime();
-        System.out.print("Bester Wert: " + rucksack(ausgewaehlt, gewichte, werte, 30, 0));
+        System.out.print("    Bester Wert: " + rucksack(ausgewaehlt, gewichte, werte, 30, 0));
         stopTime = System.nanoTime();
         ticks = (stopTime - startTime) / 1000;
 
         System.out.println("    |   Gesamtgewicht: " + gesamtGewicht(gewichte, werte, guteLoesung, 30));
-        System.out.println("Loesung: " + Arrays.toString(guteLoesung));
-        System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms");
-        System.out.println("Laenge: " + guteLoesung.length);
-        System.out.println("Anzahl der Iterationen: " + counter +"\n");
+        System.out.println("    Loesung: " + Arrays.toString(guteLoesung));
+        System.out.println("    Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms");
+        System.out.println("    Laenge: " + guteLoesung.length);
+        System.out.println("    Anzahl der Iterationen: " + counter +"\n");
     }
 
     public static void main(String[] args) {
@@ -130,14 +169,20 @@ public class RucksackBacktracking {
         int[] werte5 = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
         int[] ausgewaehlt5 = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
+        System.out.println("Random Beispiel, da Laufzeit beim ersten Test immer höher: ");
+        run(gewichte4, werte4, ausgewaehlt4);
 
-       run(gewichte, werte, ausgewaehlt);
-         run(gewichte2, werte2, ausgewaehlt2);
-            run(bestG, bestW, bestA);
-            run(gewichte3, werte3, ausgewaehlt3);
-            run(gewichte4, werte4, ausgewaehlt4);
-            run(gewichte5, werte5, ausgewaehlt5);
+        System.out.println("Beispeil 1: ");
+        run(gewichte, werte, ausgewaehlt);
 
+        System.out.println("Beispiel 2: ");
+        run(gewichte2, werte2, ausgewaehlt2);
+
+        System.out.println("Best Case (n): ");
+        run(bestG, bestW, bestA);
+
+        System.out.println("Worst Case (2^n): ");
+        run(gewichte5, werte5, ausgewaehlt5);
 
     }
 }

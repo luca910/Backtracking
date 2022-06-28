@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="jpackage" name="U10">
+    <output-path>$PROJECT_DIR$/out/artifacts/U10</output-path>
+    <properties id="jpackage-properties">
+      <options>
+        <option name="version" value="" />
+        <option name="copyright" value="" />
+        <option name="description" value="" />
+        <option name="vendor" value="" />
+        <option name="mainClass" value="de.hsrm.ads.RucksackBacktracking" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="U10.jar">
+        <element id="module-output" name="U10" />
+      </element>
+    </root>
+  </artifact>
+</component>
