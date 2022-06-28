@@ -60,23 +60,24 @@ public class Reverse {
         long stopTime = System.nanoTime();//
 
         Reverse r = new Reverse();
+        String s= "leohortetrohoel";
 
         startTime = System.nanoTime();
-        System.out.print(r.reverseRecursive("leohortetrohoel"));
+        System.out.print(r.reverseRecursive(s));
         stopTime = System.nanoTime();
         System.out.println(" (Warmup-run)");
         ticks = (stopTime - startTime) / 1000;
         System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms\n");
 
         startTime = System.nanoTime();
-        System.out.print(r.reverseRecursivePalindrome("leohortetrohoel"));
+        System.out.print(r.reverseRecursivePalindrome(s));
         stopTime = System.nanoTime();
         System.out.println(" (Palindrom-Check)");
         ticks = (stopTime - startTime) / 1000;
         System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms\n");
 
         startTime = System.nanoTime();
-        System.out.println(r.reverseRecursive("leohortetrohoel"));
+        System.out.println(r.reverseRecursive(s));
         stopTime = System.nanoTime();
         ticks = (stopTime - startTime) / 1000;
         System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms\n");
