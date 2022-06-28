@@ -1,12 +1,10 @@
 package de.hsrm.ads;
 
-import de.hsrm.ads.*;
-
 class AIO{
     public static void main(String[] args) {
-        System.out.println("Aufgabe RucksackGreedy Anfang");
+        System.out.println("Aufgabe RucksackBacktracking Anfang");
         RucksackBacktracking.main(args);
-        System.out.println("Aufgabe RucksackGreedy Ende");
+        System.out.println("Aufgabe RucksackBacktracking Ende");
 
         System.out.println("Aufgabe RucksackGreedy Anfang");
         RucksackGreedy.main(args);
