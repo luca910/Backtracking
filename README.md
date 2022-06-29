@@ -29,10 +29,6 @@
 Weitere Dokumentation finden Sie im Quellcode oder unter [https://luca910.github.io/backtracking](https://luca910.github.io/Backtracking/)
 
 Aufgabe 2:\
-Zu zeigen:\
-	∃c,n_0  :2^n≤c∗2^n  für alle n≥n_0\
-	wähle c=2 und n=100
-
 f(n)=2∗f(n−1)                     f(0)=1            n∈N
 
 f(1)=2∗1=2\
@@ -45,6 +41,10 @@ f(7)=2∗f(6)=128\
 f(8)=2∗f(7)=256=2∗2∗2∗2∗2∗2∗2∗2\
 …\
 f(n)=2^n∈O(2^n)
+
+Zu zeigen:\
+	∃c,n_0  :2^n≤c∗2^n  für alle n≥n_0\
+	wähle c=2 und n=100
 
 IA\
 Für den Anfang wird n=1000 eingesetzt um zu prüfen, ob es Stimmt.\
