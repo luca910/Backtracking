@@ -14,6 +14,15 @@ public class Reverse {
     /**
      * Kehrt den Übergebenen String um.
      *
+     * Rekurrenz:
+     *  f(n) = 1 + f(n-1)
+     *  f(0) = 1
+     *  f(1) = 1
+     *  f(2) = 2
+     *  f(3) = 3
+     *  ...
+     *  f(n) = n
+     *
      * @param s String to reverse
      * @return reversed string
      */
@@ -71,6 +80,7 @@ public class Reverse {
 
         Reverse r = new Reverse();
         String s= "leohortetrohoel";
+        String s2= "Xylophone";
 
         startTime = System.nanoTime();
         System.out.print(r.reverseRecursive(s));
@@ -91,6 +101,19 @@ public class Reverse {
         stopTime = System.nanoTime();
         ticks = (stopTime - startTime) / 1000;
         System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms\n");
+
+        startTime = System.nanoTime();
+        System.out.println(r.reverseRecursivePalindrome(s2));
+        stopTime = System.nanoTime();
+        ticks = (stopTime - startTime) / 1000;
+        System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms\n");
+
+        startTime = System.nanoTime();
+        System.out.println(r.reverseRecursive(s2));
+        stopTime = System.nanoTime();
+        ticks = (stopTime - startTime) / 1000;
+        System.out.println("Zeit: " + (stopTime - startTime) + "ns ca.:" + String.format("%d.%02d", ticks / 1000, (ticks % 1000) / 10) + "ms\n");
+
 
 
     }

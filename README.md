@@ -62,3 +62,13 @@ n→n+1:\
 
 Da 2∗2∗2^n=2^(n+2)  ist haben wir gezeigt, dass 2^(n+1)≤2∗2^(n+1)\
 ![image](https://user-images.githubusercontent.com/41526150/176511195-16aeeb99-3900-422a-bf0c-64a7d90c55ea.png)
+
+Aufgabe 3:\
+    Rekurrenz:\
+    f(n) = 1 + f(n-1)\
+    f(0) = 1\
+    f(1) = 1\
+    f(2) = 2\
+    f(3) = 3\
+    ...\
+    f(n) = n
