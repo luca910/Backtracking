@@ -7,12 +7,13 @@
         <option name="copyright" value="" />
         <option name="description" value="" />
         <option name="vendor" value="" />
-        <option name="mainClass" value="de.hsrm.ads.RucksackBacktracking" />
+        <option name="mainClass" value="de.hsrm.ads.AIO" />
       </options>
     </properties>
     <root id="root">
       <element id="archive" name="U10.jar">
         <element id="module-output" name="U10" />
+        <element id="module-source" name="U10" />
       </element>
     </root>
   </artifact>
