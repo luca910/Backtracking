@@ -12,7 +12,7 @@
    ```
    der Zip-Datei.
    
-7. Dühren sie mit dem Befehl 
+7. Führen sie mit dem Befehl 
    ```
    java AIO.java
    ```
