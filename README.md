@@ -12,19 +12,13 @@
    ```
    der Zip-Datei.
    
-7. Führen sie mit dem Befehl 
-   ```
-   java AIO.java
-   ```
-   das Programm aus.
-   AIO.java gibt hierbei die Ausgaben der einzelnen-Teilaufgaben zusammen aus.
-   Alternativ können Sie die einzelnen Teilaufgaben mit 
+7. Führen Sie mit den Befehlen die einzelnen Teilaufgaben mit 
    ```
    java Reverse.java
    java RucksackBacktracking.java
    java RucksackGreedy.java
    ```
-   ausgeben lassen.
+   aus.
 
 Weitere Dokumentation finden Sie im Quellcode oder unter [https://luca910.github.io/backtracking](https://luca910.github.io/Backtracking/)
 
