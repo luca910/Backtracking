@@ -1,7 +1,5 @@
 package de.hsrm.ads;
 
-
-
 /**
  * String Reverse Rekusiv mit Palindrom-Check
  * @see <a href="https://www.cs.hs-rm.de/~reith/resources/Lehre/ADS22/Test2.pdf">cs.hs-rm.de</a>
