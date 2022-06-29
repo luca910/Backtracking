@@ -6,4 +6,6 @@
 4. führen sie mit dem Befehl "java AIO.java" das Programm aus.
    AIO.java gibt hierbei die Ausgaben der einzelnen-Teilaufgaben zusammen aus.
    Alternativ können Sie die einzelnen Teilaufgaben mit "java Reverse.java", "java RucksackBacktracking.java", "java RucksackGreedy.java" ausgeben lassen.
+
+Weitere Dokumentation finden Sie im Quellcode oder unter https://luca910.github.io/backtracking
   
