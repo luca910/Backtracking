@@ -7,5 +7,7 @@
    AIO.java gibt hierbei die Ausgaben der einzelnen-Teilaufgaben zusammen aus.
    Alternativ können Sie die einzelnen Teilaufgaben mit "java Reverse.java", "java RucksackBacktracking.java", "java RucksackGreedy.java" ausgeben lassen.
 
-Weitere Dokumentation finden Sie im Quellcode oder unter https://luca910.github.io/backtracking
-  
+Weitere Dokumentation finden Sie im Quellcode oder unter [https://luca910.github.io/backtracking](https://luca910.github.io/Backtracking/)
+
+Aufgabe 2:
+![Aufgabe 2](https://github.com/luca910/Backtracking/blob/master/A2.png?raw=true)
