@@ -9,4 +9,5 @@
 
 Weitere Dokumentation finden Sie im Quellcode oder unter https://luca910.github.io/backtracking
 
+Aufgabe 2:
 ![Aufgabe 2](https://github.com/luca910/Backtracking/blob/master/A2.png?raw=true)
