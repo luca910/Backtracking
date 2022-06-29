@@ -1,5 +1,14 @@
 package de.hsrm.ads;
 
+/**
+ * Implementierung der Rechner für Rucksack-Probleme.
+ * @author Luca Krawczyk
+ * @author Paul Knoll
+ *
+ * @version 1.0
+ *
+ * Hilfsklasse zum Lösen der Aufgaben
+ */
 public class Calculator {
     /**
      * Loescht alle Elemente aus der Liste.
